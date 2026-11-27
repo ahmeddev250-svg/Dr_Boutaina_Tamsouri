@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Primary & Variants — Derived from Centre Dentaire Dr. Boutaina Tamsouri Logo (#210BCB & #18B1BE) */
+  --primary: #210bcb;
+  --primary-deep: #15068f;
+  --primary-glow: #18b1be;
+  --primary-soft: #eef2ff;
+
+  /* Secondary & Neutral Tints */
+  --secondary: #f3fafb;
+  --accent: #e4f7f9;
+
+  /* High-Impact Warm Accent (Rating stars & highlight CTAs) */
+  --warm: #f5a623;
+  --warm-soft: #fef6e6;
+
+  /* Text & Surface Neutrals (WCAG AA/AAA compliant) */
+  --foreground: #101828;
+  --muted-foreground: #475467;
+  --background: #ffffff;
+  --card: #ffffff;
+
+  /* UI Borders & Feedback Signals */
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --success: #0d9488;
+  --destructive: #dc2626;
+
+  /* Border Radius Scale */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 30px;
+  --radius-full: 9999px;
+
+  /* Elevation Shadows */
+  --shadow-soft: 0 4px 20px -6px rgba(16, 24, 40, 0.08);
+  --shadow-card: 0 18px 40px -18px rgba(33, 11, 203, 0.14);
+  --shadow-elevated: 0 30px 60px -24px rgba(21, 6, 143, 0.24);
+  --shadow-glow: 0 14px 34px -10px rgba(24, 177, 190, 0.42);
+
+  /* Gradients & Overlays */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-deep) 100%);
+  --gradient-hero: radial-gradient(120% 90% at 80% 10%, #e4f7f9 0%, var(--secondary) 45%, #ffffff 100%);
+  --gradient-banner: linear-gradient(95deg, rgba(21, 6, 143, 0.95) 0%, rgba(33, 11, 203, 0.88) 52%, rgba(24, 177, 190, 0.55) 100%);
+  --gradient-card-overlay: linear-gradient(180deg, transparent 0%, rgba(16, 24, 40, 0.78) 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+  font-family: 'DM Sans', 'Cairo', system-ui, sans-serif;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+[dir='rtl'] body,
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3 {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+.container-site {
+  width: 100%;
+  max-width: 82rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .container-site {
+    padding-inline: 2rem;
+  }
+}
+
+.section-y {
+  padding-block: 4.5rem;
+}
+
+@media (min-width: 64rem) {
+  .section-y {
+    padding-block: 6.5rem;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes marquee-forward {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+.animate-marquee-forward {
+  display: flex;
+  width: max-content;
+  animation: marquee-forward 38s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 42s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float,
+  .animate-marquee-forward,
+  .animate-marquee-reverse {
+    animation: none;
+  }
+}
+
+.bg-medical-plus {
+  background-color: #ffffff;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 14h4v6h6v4h-6v6h-4v-6h-6v-4h6v-6z' fill='%2318B1BE' fill-opacity='0.14'/%3E%3C/svg%3E"),
+    radial-gradient(120% 90% at 15% 10%, #d8f3f7 0%, #f3fafb 48%, #ffffff 100%);
+  background-size: 44px 44px, 100% 100%;
+  background-repeat: repeat, no-repeat;
+}
